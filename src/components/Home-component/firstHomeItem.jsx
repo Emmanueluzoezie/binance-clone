@@ -6,7 +6,9 @@ import google from "../../data/google.png"
 import binanceOne from "../../data/binance-one.png"
 import binanceTwo from "../../data/binance-two.png"
 import binanceThree from "../../data/binance-three.png"
+import logo from "../../data/logos.png"
 import binanceFour from "../../data/binance-four.png"
+import { FaRegCreditCard } from 'react-icons/fa'
 
 const FirstHomeItem = () => {
   return (
@@ -51,11 +53,13 @@ const FirstHomeItem = () => {
                           <img src={binanceFour} alt="" />
                           <h1>Binance NFT</h1>
                       </div>
-                      <div className='w-[45%] h-[180px] bg-white dark:bg-gray-900 rounded-lg m-2' >
+                      <div className='w-[45%] h-[180px] bg-white dark:bg-gray-900 rounded-lg m-2 flex justify-center items-center' >
                           <img src={binanceTwo} alt="" />
                       </div>
-                      <div className='w-[32%] h-[180px] bg-white dark:bg-gray-900 rounded-lg m-2 p-4' >
-                          <h1>Binance card</h1>
+                      <div className='w-[32%] h-[180px] bg-white dark:bg-gray-900 rounded-lg m-2 p-4 space-y-4' >
+                          <img src={logo} className="w-14" alt="" />
+                          <FaRegCreditCard className='text-4xl' />
+                          <h1 className='font-bold'>Binance card</h1>
                       </div>
                   </div>
               </div>
