@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  .bgcolor{
+    background-color: #F3BA2F;
+  }
+  .hide-image{
+    display: none;
+  }
+  .color{
+    color: #F3BA2F;
+  }
+  .dark-theme{
+    background-color: black;
+    color: white;
+  }
+  .dark-sidebar{
+    background-color: #201f1f;
+    color: white;
+  }
+  .dark-hover{
+    background-color: #333333;
+    color: white;
+  }
+}
