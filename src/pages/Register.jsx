@@ -1,4 +1,3 @@
-import React from 'react'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import Language from '../components/Language'
@@ -15,6 +14,7 @@ const Register = () => {
   const handleLanguage = () => {
     
   }
+
 
   return (
     <div className='p-4 bg-gray-100 dark:dark-theme'>
