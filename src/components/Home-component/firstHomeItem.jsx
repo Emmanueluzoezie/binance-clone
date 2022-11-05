@@ -9,8 +9,11 @@ import binanceThree from "../../data/binance-three.png"
 import logo from "../../data/logos.png"
 import binanceFour from "../../data/binance-four.png"
 import { FaRegCreditCard } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const FirstHomeItem = () => {
+    const navigate = useNavigate()
+
   return (
       <div>
           <div className='w-full flex my-20'>
@@ -22,7 +25,7 @@ const FirstHomeItem = () => {
                       <MdKeyboardArrowRight className='text-2xl' />
                   </div>
                   <div className='mt-4 px-4'>
-                      <button className='flex items-center justify-center bgcolor w-full p-2 space-x-2 text-lg text-black rounded-lg'>
+                      <button className='flex items-center justify-center bgcolor w-full p-2 space-x-2 text-lg text-black rounded-lg' onClick={() => navigate("/register")}>
                           <BsFillPersonFill />
                           <h2>Signup with Email or Phone</h2>
                       </button>

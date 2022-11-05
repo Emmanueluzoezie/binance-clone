@@ -5,8 +5,11 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 import { BsApple, BsFillPersonFill } from 'react-icons/bs'
 import PopularCoins from '../popularCoins'
 import FirstHomeItem from './firstHomeItem'
+import { useNavigate } from 'react-router-dom'
 
 const HomeComponent = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
           <div className='flex items-center space-x-2 p-2 bg-yellow-100 dark:bg-yellow-900 cursor-pointer text-sm sm:text-sm mb-7'>

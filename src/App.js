@@ -7,6 +7,7 @@ import Language from './components/Language';
 import Currency from './components/Currency';
 import { useStateContext } from './context/useStateContext';
 import Favorite from './pages/Favorite';
+import Register from './pages/Register';
 
 function App() {
   const { sidebar, openLanguage, currencyList } = useStateContext()
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/market' element={<Market />} />
           <Route path='/favorite' element={<Favorite />} />
+        <Route path='/register' element={<Register />} />
         </Routes>
     </div>
   );
