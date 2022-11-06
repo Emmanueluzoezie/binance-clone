@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 
 
 const RegisterWithNumber = () => {
   const referral= Math.random()*100000;
+  const navigate = useNavigate()
+
   return (
     <form className='md:w-[500px]'>
       <label className='block'>Personal Phone Number</label>
@@ -25,6 +28,7 @@ const RegisterWithNumber = () => {
       <button className='flex items-center justify-center bgcolor w-full p-2 space-x-2 text-lg text-black rounded-lg'>
         <h2>Create Personal Account</h2>
       </button>
+      <p className='font-semibold my-5'>Already have an account <span className='color cursor-pointer' onClick={() => navigate("/sign-in")}>Sign in</span></p>
       <p className='font-semibold my-5'>Not looking for a personal account? <span className='color'>Sign up for an entity account</span></p>
     </form>
   )

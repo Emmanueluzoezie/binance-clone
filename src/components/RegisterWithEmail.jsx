@@ -10,7 +10,7 @@ const RegisterWithEmail = () => {
     password:'',
   })
   const {email, password} =formData;
- const navigate=useNavigate()
+ const navigate = useNavigate()
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -52,6 +52,7 @@ const RegisterWithEmail = () => {
       <button className='flex items-center justify-center bgcolor w-full p-2 space-x-2 text-lg text-black rounded-lg'>
         <h2>Create Personal Account</h2>
       </button>
+      <p className='font-semibold my-5'>Already have an account <span className='color' onClick={() => navigate("/sign-in")}>Sign in</span></p>
       <p className='font-semibold my-5'>Not looking for a personal account? <span className='color'>Sign up for an entity account</span></p>
     </form>
   )

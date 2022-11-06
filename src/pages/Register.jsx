@@ -11,11 +11,6 @@ const Register = () => {
   const [colorTheme, setTheme] = ThemeMode();
   const navigate = useNavigate()
 
-  const handleLanguage = () => {
-    
-  }
-
-
   return (
     <div className='p-4 bg-gray-100 dark:dark-theme'>
         <div className='flex justify-between items-center'>

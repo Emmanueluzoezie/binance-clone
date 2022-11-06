@@ -6,14 +6,6 @@ import RegisterWithNumber from './RegisterWithNumber'
 const RegisterComponent = () => {
     const { registerType, setRegisterType } = useStateContext()
 
-    const pushToEmailType = () => {
-
-    }
-    const pushToNumberType = () => {
-
-    }
-
-
   return (
     <div className='mt-20 flex justify-center md:justify-start md:ml-[20%]'>
           <div className=''>
