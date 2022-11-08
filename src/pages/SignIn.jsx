@@ -34,14 +34,13 @@ function SignIn() {
         password
       )
       if(userCredentials.user){
-          navigate('/')
+          navigate('/profile')
       }
     } catch (error) {
        toast.error('invalid user Credentails')
     }
     }
   const onSignUp= ()=>{
-  
    navigate('/register')
   }
   const onForgot= ()=>{
