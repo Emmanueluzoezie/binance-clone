@@ -29,7 +29,7 @@ const Sidebar = () => {
         <AiFillCloseCircle onClick={() => setSidebar(false)} className="cursor-pointer text-4xl dark:text-white"/>
           </div>
           <div className='flex justify-center font-bold text-xl hover:color'>
-            <button className=''>Login</button>
+            <button className='' onClick={()=> navigate('/sign-in')}>Login</button>
           </div>
           <div className='flex justify-center font-bold b'>
         <button className='bgcolor w-full rounded-md text-xl p-2 mt-4 mx-4'>Register</button>

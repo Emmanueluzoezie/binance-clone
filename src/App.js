@@ -13,6 +13,8 @@ import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import OAuth from './pages/OAuth';
 import ForgotPassword from './pages/ForgotPassword';
+import Profile from './pages/Profile'
+import PrivateRoute from './components/PrivateRoute'
 import { MdOutlineMessage } from 'react-icons/md';
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/google' element={<OAuth />} />
+        <Route path='/profile' element={<PrivateRoute />} >
+           <Route path='/profile' element={<Profile/>} />
+          </Route>
         <Route path='/forgot-password' element={<ForgotPassword />} />
         </Routes>
         <ToastContainer/>
