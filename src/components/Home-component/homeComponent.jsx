@@ -6,6 +6,7 @@ import { BsApple, BsFillPersonFill } from 'react-icons/bs'
 import PopularCoins from '../popularCoins'
 import FirstHomeItem from './firstHomeItem'
 import { useNavigate } from 'react-router-dom'
+import SecondHomeItem from './secondHomeItem'
 
 const HomeComponent = () => {
   const navigate = useNavigate()
@@ -18,10 +19,11 @@ const HomeComponent = () => {
               <FaArrowRight className='font-bold' />
           </div>
           <FirstHomeItem />
-          <div className='p-5 font-bold text-2xl '>
-              <h2>Popular cryptocurrencies</h2>
+          <div className='pt-5 font-bold text-2xl '>
+              <h2 className='px-5'>Popular cryptocurrencies</h2>
               <PopularCoins />
           </div>
+          <SecondHomeItem />
     </div>
   )
 }

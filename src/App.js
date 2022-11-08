@@ -13,12 +13,17 @@ import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import OAuth from './pages/OAuth';
 import ForgotPassword from './pages/ForgotPassword';
+import { MdOutlineMessage } from 'react-icons/md';
 
 function App() {
   const { sidebar, openLanguage, currencyList } = useStateContext()
 
   return (
-    <div className='bg-gray-100 dark:dark-theme h-screen'>
+    <div className='bg-gray-50 dark:dark-theme h-screen relative'>
+
+     <div className='fixed bottom-4 lg:bottom-10 text-2xl cursor-pointer lg:text-5xl p-4 rounded-full right-4 lg:right-10 bgcolor z-10'>
+        <MdOutlineMessage />
+     </div>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/market' element={<Market />} />

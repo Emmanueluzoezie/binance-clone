@@ -26,11 +26,11 @@ code {
     color: #F3BA2F;
   }
   .dark-theme{
-    background-color: black;
+    background-color: rgb(17, 17, 17);
     color: white;
   }
   .dark-sidebar{
-    background-color: #201f1f;
+    background-color: #2d2c2c;
     color: white;
   }
   .dark-hover{

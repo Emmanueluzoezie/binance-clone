@@ -16,9 +16,9 @@ const FirstHomeItem = () => {
 
   return (
       <div>
-          <div className='w-full flex my-20'>
-              <div>
-                  <h1 className='px-5 font-bold text-3xl md:w-[55%]'>Search for over 1000+ cryptocurrencies</h1>
+          <div className='w-full flex lg:items-center my-20 lg:px-20'>
+              <div className='w-full lg:w-[50%]'>
+                  <h1 className='px-5 font-bold text-3xl '>Search for over 1000+ cryptocurrencies</h1>
                   <div className='flex items-center space-x-1 mx-3 mt-10 cursor-pointer '>
                       <AiOutlineSlack className='text-xl ml-4' />
                       <p>Trade Bitcoin for free</p>
@@ -46,7 +46,7 @@ const FirstHomeItem = () => {
                       </div>
                   </div>
               </div>
-              <div className='hidden md:flex md:w-[45%] ml-28'>
+              <div className='hidden md:flex md:w-[50%] ml-28'>
                   <div className='w-full md:flex flex-wrap justify-center'>
                       <div className='md:w-[45%] bg-white dark:bg-gray-900 rounded-lg  m-2 py-6 px-4 space-y-4'>
                           <h1 className='text-sm'>Hold & Earn</h1>
