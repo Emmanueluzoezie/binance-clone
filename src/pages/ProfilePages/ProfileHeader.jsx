@@ -26,8 +26,6 @@ function ProfileHeader (){
          <li>English</li>
          <li className="border-l-2 border-r-2 px-1 text-center">USD</li>
        </ul>
-   
-        
      </div>
   </header>
  </>
