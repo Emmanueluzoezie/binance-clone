@@ -30,7 +30,9 @@ function ProfileSection() {
        </div>
      </header>
      <section>
-      
+       <div className="showcase">
+        
+       </div>
      </section>
     </div>
     </div>
