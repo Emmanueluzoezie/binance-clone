@@ -7,6 +7,7 @@ import PopularCoins from '../popularCoins'
 import FirstHomeItem from './firstHomeItem'
 import { useNavigate } from 'react-router-dom'
 import SecondHomeItem from './secondHomeItem'
+import Footer from '../Footer'
 
 const HomeComponent = () => {
   const navigate = useNavigate()
@@ -24,6 +25,7 @@ const HomeComponent = () => {
               <PopularCoins />
           </div>
           <SecondHomeItem />
+          <Footer />
     </div>
   )
 }

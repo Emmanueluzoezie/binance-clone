@@ -9,6 +9,7 @@ export const ContextProvider = ({children}) => {
     const [currencyList, setCurrencyList] = useState(false)
     const [currency, setCurrency] = useState("NGN");
     const [symbol, setSymbol] = useState("₹");
+    const [itemType, setItemType] = useState("");
     const [registerType, setRegisterType] = useState("email")
 
     useEffect(() => {
@@ -176,7 +177,7 @@ export const ContextProvider = ({children}) => {
 
     return(
         <StateContext.Provider value={{
-            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType }}>
+            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType, itemType, setItemType }}>
             {children}
         </StateContext.Provider>
     )
