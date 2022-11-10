@@ -32,7 +32,7 @@ const Sidebar = () => {
             <button className='' onClick={()=> navigate('/sign-in')}>Login</button>
           </div>
           <div className='flex justify-center font-bold b'>
-        <button className='bgcolor w-full rounded-md text-xl p-2 mt-4 mx-4'>Register</button>
+        <button className='bgcolor w-full rounded-md text-xl p-2 mt-4 mx-4' onClick={() => navigate('/register')}>Register</button>
           </div>
           <div className='mt-6'>
             <div className='text-bold text-xl cursor-pointer hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>

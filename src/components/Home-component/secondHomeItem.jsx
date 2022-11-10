@@ -16,8 +16,11 @@ import faqthree from "../../data/faqthree.png"
 import { AiFillApple, AiFillCloseCircle } from 'react-icons/ai'
 import { BsWindows } from 'react-icons/bs'
 import { FaAndroid, FaGooglePlay, FaLinux } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const SecondHomeItem = () => {
+    const navigate = useNavigate()
+
   return (
     <div className=''>
           <div className='flex items-center space-x-1  my-10 cursor-pointer hover:color px-5'>
@@ -26,7 +29,7 @@ const SecondHomeItem = () => {
           </div>
           <h1 className=' font-medium text-xl px-5'>Sign up now to build your own portfolio for free!</h1>
           <div className='px-5'>
-          <button className='bgcolor w-full my-4 text-xl py-3 rounded-lg dark:text-black lg:mb-10'>Get Started</button>
+          <button className='bgcolor w-full my-4 text-xl py-3 rounded-lg dark:text-black lg:mb-10' onClick={() => navigate("/register")}>Get Started</button>
           </div>
           <div className='my-10 lg:flex relative px-5'>
               <div className='flex justify-center w-ful lg:w-[40%] lg:absolute lg:right-0' >
@@ -61,7 +64,7 @@ const SecondHomeItem = () => {
               </div>
           </div>
           <div className='px-5'>
-          <button className='bgcolor w-full my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20'>Get Started</button>
+              <button className='bgcolor w-full my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20' onClick={() => navigate("/register")}>Get Started</button>
           </div>
           <h1 className='px-5 font-medium lg:font-bold text-xl lg:text-4xl lg:ml-10 lg:mb-10 md:text-4xl'>Explore endless possibilities with Binance</h1>
           <div className='lg:flex lg:justify-center lg:px-10 px-5'>
@@ -91,7 +94,7 @@ const SecondHomeItem = () => {
               </div>
           </div>
           <div className='px-5'>
-          <button className='bgcolor w-full lg:w-[200px] my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20 lg:ml-20 lg:mt-10'>Explore Now</button>
+              <button className='bgcolor w-full lg:w-[200px] my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20 lg:ml-20 lg:mt-10' onClick={() => navigate("/register")}>Explore Now</button>
           </div>
           <div className='mt-10 px-5 lg:mt-0 lg:flex relative'>
               <div className='flex justify-center w-ful lg:w-[50%] lg:absolute lg:right-0' >
@@ -124,7 +127,7 @@ const SecondHomeItem = () => {
               </div>
           </div>
           <div className='px-5'>
-          <button className='bgcolor w-full lg:w-[200px] my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20'>Start Now</button>
+              <button className='bgcolor w-full lg:w-[200px] my-4 text-xl py-3 rounded-lg dark:text-black md:mb-20 lg:mb-20' onClick={() => navigate("/register")}>Start Now</button>
           </div>
           <div className='lg:flex lg:items-center lg:justify-between px-5'>
               <div>
@@ -255,7 +258,7 @@ const SecondHomeItem = () => {
                           <div>
                               <h2 className='font-semibold text-xl lg:mb-2 mb-4'>Blog</h2>
                               <p className='text-md text-gray-700'>Stay up to date with the latest stories and commentary.</p>
-                              <button className='color text-md mt-4'>Learn more</button>
+                              <button className='color text-md mt-4' onClick={() => navigate("/register")}>Learn more</button>
                           </div>
                       </div>
                   </div>
@@ -263,7 +266,7 @@ const SecondHomeItem = () => {
           </div>
           <div className='px-5 mb-10 py-10 bg-gray-200 text-center'>
               <h2 className='text-2xl lg:text-4xl font-semibold my-2'>Start earning today</h2>
-              <button className='bgcolor w-full my-4 text-md font-semibold py-3 rounded-lg dark:text-black md:w-48'>Sign Up Now</button>
+              <button className='bgcolor w-full my-4 text-md font-semibold py-3 rounded-lg dark:text-black md:w-48' onClick={() => navigate("/register")}>Sign Up Now</button>
           </div>
     </div>
   )
