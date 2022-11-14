@@ -8,24 +8,35 @@ import FirstHomeItem from './firstHomeItem'
 import { useNavigate } from 'react-router-dom'
 import SecondHomeItem from './secondHomeItem'
 import Footer from '../Footer'
+import UserHomeComponent from '../user-compenent/userHomeComponent'
+import { getAuth } from 'firebase/auth'
 
 const HomeComponent = () => {
   const navigate = useNavigate()
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   return (
     <div>
-          <div className='flex items-center space-x-2 p-2 bg-yellow-100 dark:bg-yellow-900 cursor-pointer text-sm sm:text-sm mb-7'>
+          {user ? (<>
+            <UserHomeComponent />
+          </>): (
+            <>
+            <div className='flex items-center space-x-2 p-2 bg-yellow-100 dark:bg-yellow-900 cursor-pointer text-sm sm:text-sm mb-7'>
               <AiOutlineSlack />
               <p className=''>Register now - Get up to 100 USDT in trading fee (for verified user)</p>
               <FaArrowRight className='font-bold' />
-          </div>
-          <FirstHomeItem />
-          <div className='pt-5 font-bold text-2xl '>
+            </div>
+            <FirstHomeItem />
+            <div className='pt-5 font-bold text-2xl '>
               <h2 className='px-5'>Popular cryptocurrencies</h2>
               <PopularCoins />
-          </div>
-          <SecondHomeItem />
-          <Footer />
+            </div>
+            <SecondHomeItem /></>
+          )}
+          {user?(
+            <div className='hidden' />
+      ) : (<Footer />)}
     </div>
   )
 }

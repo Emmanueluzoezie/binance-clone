@@ -1,12 +1,10 @@
 
 import './App.css';
-import Home from './pages/Home';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Market from './pages/market';
-import Language from './components/Language';
-import Currency from './components/Currency';
 import { useStateContext } from './context/useStateContext';
 import Favorite from './pages/Favorite';
 import Register from './pages/Register';
@@ -16,9 +14,20 @@ import ForgotPassword from './pages/ForgotPassword';
 import Profile from './pages/Profile'
 import PrivateRoute from './components/PrivateRoute'
 import { MdOutlineMessage } from 'react-icons/md';
+import LandingPage from './pages/LandingPage';
+import Home from './pages/Home';
 
 function App() {
   const { sidebar, openLanguage, currencyList } = useStateContext()
+
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      <Home />
+    } else {
+      <LandingPage />
+    }
+  });
 
   return (
     <div className='bg-gray-50 dark:dark-theme h-screen relative'>
@@ -27,7 +36,8 @@ function App() {
         <MdOutlineMessage />
      </div>
         <Routes>
-          <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+          <Route path='/landingpage' element={<LandingPage />} />
           <Route path='/market' element={<Market />} />
           <Route path='/favorite' element={<Favorite />} />
         <Route path='/register' element={<Register />} />
@@ -44,3 +54,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

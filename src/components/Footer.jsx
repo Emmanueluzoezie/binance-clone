@@ -4,6 +4,7 @@ import { FaDiscord, FaFacebook, FaInstagram, FaReddit, FaTelegram, FaTiktok, FaT
 import { GrSubtract } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
 import { useStateContext } from '../context/useStateContext'
+import { getAuth } from 'firebase/auth'
 
 const Footer = () => {
     const { itemType, setItemType } = useStateContext()
@@ -20,17 +21,20 @@ const Footer = () => {
         }
     }
 
+    const auth = getAuth();
+    const user = auth.currentUser;
+
   return (
       <div className='px-5 lg:px-14'>
-        <div className='lg:hidden my-8'>
+          {!user ? <div className='lg:hidden my-8'>
               <h1 className='text-2xl font-semibold'>Trade on the go with Binance</h1>
               <button className='bgcolor p-2 text-md font-semibold px-10 mt-3'>Register</button>
-        </div>
+          </div>: ("")}
           <div className='md:flex md:flex-row md:justify-between'>
-              <div className='hidden lg:block'>
+              {!user ? <div className='hidden lg:block'>
                   <h1 className='text-2xl font-semibold'>Trade on the go with Binance</h1>
                   <button className='bgcolor p-2 text-md font-semibold px-10 mt-3' onClick={() => navigate("/register")}>Register</button>
-              </div>
+              </div> : ("")}
               <div className="my-6 md:my-0 lg:mx-4 ">
                   <div className='flex justify-between items-center'>
                       <h2 className='text-lg font-bold text-gray-700 cursor-pointer' onClick={() => handleClickItem("about")}> About Us</h2>
