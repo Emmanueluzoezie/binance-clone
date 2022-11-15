@@ -1,5 +1,6 @@
 import { getAuth } from 'firebase/auth';
 import React from 'react'
+import { FaBitcoin } from 'react-icons/fa';
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from 'react-icons/md';
 import { useStateContext } from '../context/useStateContext';
 
@@ -31,15 +32,15 @@ const BuyCryptoLink = () => {
     const user = auth.currentUser;
 
   return (
-      <div className="mt-6 md:my-0 lg:mx-4 px-5">
+      <div className="px-3 py-3 hover:bg-gray-200">
           <div className='flex justify-between items-center'>
-              <h2 className='text-lg font-bold text-gray-700 cursor-pointer' onClick={() => handleSidebarLink("buycrypto")}> Buy crypto{"  "}{currency}</h2>
+              <h2 className='text-md text-black cursor-pointer flex items-center' onClick={() => handleSidebarLink("buycrypto")}> <FaBitcoin className='mr-2 text-2xl text-gray-600'/> Buy crypto{"  "}{currency}</h2>
 
-              <div className='md:hidden'>
+              <div className='lg:hidden'>
                   {sidebarLink === "buycrypto" ? <MdOutlineArrowDropUp onClick={() => setSidebarLink("")} className="font-bold text-2xl cursor-pointer" /> : <MdOutlineArrowDropDown onClick={() => setSidebarLink("buycrypto")} className="font-bold text-2xl cursor-pointer" />}
               </div>
           </div>
-          <ul className={`${sidebarLink === "buycrypto" ? " text-black text-md font-bold" : "hidden md:block text-gray-400 text-sm cursor-pointer font-bold"}`}>
+          <ul className={`${sidebarLink === "buycrypto" ? " text-black text-md font-bold" : "hidden lg:block text-gray-400 text-sm cursor-pointer font-bold"}`}>
               < li className="cursor-pointer hover:text-black font-semibold flex justify-between items-center">
                   <h2>Pay with</h2>
                   <div>

@@ -35,11 +35,11 @@ const FirstHomeItem = () => {
                           <div className='flex-1 ml-2 border-b-[1px] border-white' />
                       </div>
                       <div className='flex items-center space-x-4'>
-                          <button className='flex items-center flex-1 justify-center bg-gray-600  p-3 rounded-lg' onClick={()=> navigate('/google')}>
+                          <button className='flex items-center flex-1 justify-center bg-gray-400  p-3 rounded-lg' onClick={()=> navigate('/google')}>
                               <img src={google} className="w-4 h-4 mr-3" alt="google-logo" />
                               Google
                           </button>
-                          <button className='flex items-center flex-1 justify-center bg-gray-600 p-3 rounded-lg'>
+                          <button className='flex items-center flex-1 justify-center bg-gray-400 p-3 rounded-lg'>
                               <BsApple className='mr-3' />
                               Apple
                           </button>

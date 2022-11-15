@@ -7,9 +7,9 @@ const Theme = () => {
     const [colorTheme, setTheme] = ThemeMode();
 
   return (
-      <div className='flex justify-between items-center  hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 cursor-pointer' onClick={() => { colorTheme === "light" ? (setTheme('light')) : (setTheme('dark'))}}>
-          <h2 className='text-bold text-xl flex items-center '>
-              <FaThemeco />
+      <div className='flex justify-between items-center  hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 cursor-pointer' onClick={() => { colorTheme === "light" ? (setTheme('light')) : (setTheme('dark'))}}>
+          <h2 className='text-md flex items-center '>
+              <FaThemeco className='text-gray-600'/>
             <p className=' ml-2'>Theme</p>
           </h2>
           {colorTheme === "light" ? (<div className='text-xs'>

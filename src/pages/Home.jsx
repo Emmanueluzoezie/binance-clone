@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className='relative overflow-y-scroll overflow-hidden bg-inherit'>
       {sidebar ? (
-        <div className='bg-gray-200 dark:dark-sidebar h-screen fixed right-0 w-[350px]'>
+        <div className='bg-white dark:dark-sidebar h-screen fixed right-0 w-[350px] overflow-scroll pb-10'>
           <Sidebar />
         </div>
       ) : (
