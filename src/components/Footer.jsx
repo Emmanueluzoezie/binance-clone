@@ -166,7 +166,7 @@ const Footer = () => {
                   <li className='py-4 px-2 text-2xl'><FaYoutube /></li>
               </ul>
           </div>
-          <h2 className='text-center my-10'>Crypto coin © 2022</h2>
+          <h2 className='text-center my-6'>Crypto coin © 2022</h2>
       </div>
   )
 }

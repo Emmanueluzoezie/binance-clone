@@ -55,25 +55,45 @@ const Sidebar = () => {
           </div>
         </div>
       )}
-      <BuyCryptoLink />
-      
-          <div className='mt-6'>
-            <div className='text-bold text-xl cursor-pointer hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-              <GoGraph />
-              <p className='ml-2'>Market</p>
+  
+      <div className='mt-6'>
+          <BuyCryptoLink />
+            <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+              <GoGraph  className='text-xl '/>
+              <p className='ml-2 text-black'>Market</p>
             </div>
-            <div className='text-bold text-xl cursor-pointer hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/favorite")}>
-              <MdFavorite />
-              <p className='ml-2'>Favorite coins</p>
+            <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/favorite")}>
+              <MdFavorite className='text-xl ' />
+              <p className='ml-2 text-black'>Favorite coins</p>
             </div>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Trade</p>
+        </div>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Deriavatives</p>
+        </div>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Earn</p>
+        </div>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+          <GoGraph className='text-xl'/>
+          <p className='ml-2 text-black'>Fiance</p>
+        </div>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>NFT</p>
+        </div>
             <Theme />
-            <div className='text-bold text-xl cursor-pointer hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={handleLanguage}>
-              <TbWorld />
-              <p className='ml-2'>{language}</p>
+            <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={handleLanguage}>
+              <TbWorld  className='text-xl '/>
+              <p className='ml-2 text-black'>{language}</p>
             </div>
-            <div className='text-bold text-xl cursor-pointer hover:bg-gray-300 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={handleCurrency}>
-                  <div className='w-6 h-6 bg-white flex justify-center items-center text-black rounded-full'>{symbol}</div>
-                  <p className='ml-4'>{currency}</p>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center  ' onClick={handleCurrency}>
+          <div className='w-6 h-6 currency bg-gray-400 flex justify-center items-center text-white rounded-full hover:bgcolor'>{symbol}</div>
+                  <p className='ml-4 text-black'>{currency}</p>
                 </div>
             </div>
     </div>
@@ -82,5 +102,11 @@ const Sidebar = () => {
 
 export default Sidebar
 
-// MdLightMode
-// MdDarkMode
+  // < li > Trade </ >
+  //           <li></li>
+  //           <li></li>
+  //           <li>Fiance</li>
+  //           <li>NFT <span className="bg-yellow-400 rounded-md text-center p-1 ">New</span></li>
+  //           <li>Institution Wallet</li>
+  //           <li>Orders</li>
+  //           <li><FaBell /></li>

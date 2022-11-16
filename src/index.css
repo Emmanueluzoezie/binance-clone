@@ -48,4 +48,41 @@ code {
     background-color: #333333;
     color: white;
   }
+  .icon-color:hover {
+     color:#F3BA2F;
+  }
+
+  .currency:hover {
+     background-color:#F3BA2F;
+  }
+
+.user:hover  .images{    
+    background: rgba(50, 52, 52, 0.5);
+}
+
+image {
+    position: relative;
+    z-index: -1;
+}
+
+  .edit-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    top: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .edit-profile:hover{
+   background-color: transparent;
+   color: black;
+  }
+
+
 }

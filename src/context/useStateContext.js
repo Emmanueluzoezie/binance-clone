@@ -7,12 +7,15 @@ export const ContextProvider = ({children}) => {
     const [openLanguage, setOpenLanguage] = useState(false)
     const [language, setLanguage] = useState("English")
     const [currencyList, setCurrencyList] = useState(false)
-    const [currency, setCurrency] = useState("NGN");
+    const [currency, setCurrency] = useState("USD");
     const [symbol, setSymbol] = useState("₹");
     const [itemType, setItemType] = useState("");
     const [registerType, setRegisterType] = useState("email")
     const [sidebarLink, setSidebarLink] = useState("")
-    const [openSidebarLink, setOpenSidebarLink] = useState(false)
+    const [activePage, setActivePage] = useState("dashboard")
+    const [checkUser, setCheckUser] = useState(false)
+    const [showBalance, setShowBalance] = useState(true)
+    const [bgHover, setBgHover] = useState(true)
 
     useEffect(() => {
         switch (currency) {
@@ -176,10 +179,11 @@ export const ContextProvider = ({children}) => {
                 setSymbol("₦")
         }
     }, [currency]);
+    
 
     return(
         <StateContext.Provider value={{
-            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType, itemType, setItemType, sidebarLink, setSidebarLink }}>
+            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType, itemType, setItemType, sidebarLink, setSidebarLink, activePage, setActivePage, checkUser, setCheckUser, showBalance, setShowBalance, bgHover, setBgHover }}>
             {children}
         </StateContext.Provider>
     )
