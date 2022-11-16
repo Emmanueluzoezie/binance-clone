@@ -32,9 +32,11 @@ const BuyCryptoLink = () => {
     const user = auth.currentUser;
 
   return (
-      <div className="px-3 py-3 hover:bg-gray-200">
-          <div className='flex justify-between items-center'>
-              <h2 className='text-md text-black cursor-pointer flex items-center' onClick={() => handleSidebarLink("buycrypto")}> <FaBitcoin className='mr-2 text-2xl text-gray-600'/> Buy crypto{"  "}{currency}</h2>
+      <div className="">
+          <div className='flex justify-between items-center hover:bg-gray-200'>
+              <div className='text-md text-black cursor-pointer flex items-center icon-color px-3 py-3 ' onClick={() => handleSidebarLink("buycrypto")}> <FaBitcoin className='mr-2 text-2xl '/> 
+                  <h2 className='text-black'>Buy crypto {"  "}{currency}</h2>
+                </div>
 
               <div className='lg:hidden'>
                   {sidebarLink === "buycrypto" ? <MdOutlineArrowDropUp onClick={() => setSidebarLink("")} className="font-bold text-2xl cursor-pointer" /> : <MdOutlineArrowDropDown onClick={() => setSidebarLink("buycrypto")} className="font-bold text-2xl cursor-pointer" />}

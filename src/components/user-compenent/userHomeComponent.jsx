@@ -8,10 +8,9 @@ const UserHomeComponent = () => {
   const { activePage, setActivePage } = useStateContext()
 
   return (
-    <div className='md:flex'>
+    <div className='md:flex bg-gray-100'>
       <UserMenu />
-      <div className='overflow-y-scroll md:h-[88vh]'> 
-        {/* <h1>welcome</h1> */}
+      <div className='overflow-y-scroll md:h-[88vh] flex-1'> 
         {activePage === "dashboard" && <DashBoard />}
         <Footer />
       </div>

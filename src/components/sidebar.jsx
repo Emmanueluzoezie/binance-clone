@@ -59,41 +59,41 @@ const Sidebar = () => {
       <div className='mt-6'>
           <BuyCryptoLink />
             <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-              <GoGraph  className='text-xl text-gray-600'/>
-              <p className='ml-2'>Market</p>
+              <GoGraph  className='text-xl '/>
+              <p className='ml-2 text-black'>Market</p>
             </div>
             <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/favorite")}>
-              <MdFavorite className='text-xl text-gray-600' />
-              <p className='ml-2'>Favorite coins</p>
+              <MdFavorite className='text-xl ' />
+              <p className='ml-2 text-black'>Favorite coins</p>
             </div>
         <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-          <GoGraph  className='text-xl text-gray-600'/>
-          <p className='ml-2'>Trade</p>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Trade</p>
         </div>
         <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-          <GoGraph  className='text-xl text-gray-600'/>
-          <p className='ml-2'>Deriavatives</p>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Deriavatives</p>
         </div>
         <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-          <GoGraph  className='text-xl text-gray-600'/>
-          <p className='ml-2'>Earn</p>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>Earn</p>
         </div>
         <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-          <GoGraph />
-          <p className='ml-2'>Fiance</p>
+          <GoGraph className='text-xl'/>
+          <p className='ml-2 text-black'>Fiance</p>
         </div>
         <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={() => navigate("/market")}>
-          <GoGraph  className='text-xl text-gray-600'/>
-          <p className='ml-2'>NFT</p>
+          <GoGraph  className='text-xl '/>
+          <p className='ml-2 text-black'>NFT</p>
         </div>
             <Theme />
             <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={handleLanguage}>
-              <TbWorld  className='text-xl text-gray-600'/>
-              <p className='ml-2'>{language}</p>
+              <TbWorld  className='text-xl '/>
+              <p className='ml-2 text-black'>{language}</p>
             </div>
-            <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center' onClick={handleCurrency}>
-                  <div className='w-6 h-6 bg-white flex justify-center items-center text-black rounded-full'>{symbol}</div>
-                  <p className='ml-4'>{currency}</p>
+        <div className='text-md icon-color cursor-pointer hover:bg-gray-200 dark:hover:dark-hover px-4 py-3 flex items-center  ' onClick={handleCurrency}>
+          <div className='w-6 h-6 currency bg-gray-400 flex justify-center items-center text-white rounded-full hover:bgcolor'>{symbol}</div>
+                  <p className='ml-4 text-black'>{currency}</p>
                 </div>
             </div>
     </div>
