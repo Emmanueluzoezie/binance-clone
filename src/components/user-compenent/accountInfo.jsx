@@ -3,20 +3,25 @@ import { BiHide, BiSearch, BiShow } from 'react-icons/bi'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { useStateContext } from '../../context/useStateContext'
 import investcircle from "../../data/investcircle.png"
+import userbanner from "../../data/userbanner.png"
 
 const AccountInfo = () => {
     const { showBalance, setShowBalance, symbol } = useStateContext()
 
   return (
-    <div className='mb-10 '>
-          <div className='px-5  my-8'>
+    <div className='mb-10 lg:my-10 relative lg:flex flex-row-reverse'>
+          <div className='px-5  my-8 lg:my-0 lg:w-[40%]'>
               <h1 className='text-2xl font-semibold mb-2'>Explore</h1>
-              <div className='flex items-center space-x-2 p-2 bg-white border-[1px] border-yellow-400 '>
+              <div className='flex items-center space-x-2 p-2 bg-white border-[1px] border-gray-600 hover:border-yellow-400'>
                   <BiSearch />
-                  <input className='outline-none' type="text" placeholder='Coin, Function, Announcement' />
+                  <input className='outline-none flex-1' type="text" placeholder='Coin, Function, Announcement' />
+              </div>
+              <div className='hidden lg:flex mt-10 justify-between bg-gray-200 px-3 text-xl font-bold items-center '>
+                <h3 className='mr-20'>New: 0% fees in trading Bitcoin</h3>
+                  <img src={userbanner} alt="banner" className='w-[100px]'/>
               </div>
           </div>
-          <div>
+          <div className='lg:flex-1'>
               <div className='md:flex items-center px-5'>
                   <div className='flex items-center space-x-3 md:space-x-7 text-2xl font-bold mb-4 mr-6'>
                       <h2>Estimated Balance</h2>
@@ -56,66 +61,72 @@ const AccountInfo = () => {
                       </div>
                   </div> : <h2 className="font-bold text-xl">***Balance hidden***</h2>}
               </div>
-              <div className='px-5 mt-10'>
-                  <div className='flex justify-center'>
-                      <img src={investcircle} alt="" className='md:w-[150px]'/>  
+              <div className='px-5 my-10 md:flex space-x-6'>
+                  <div className='flex justify-center md:w-[30%]'>
+                      <img src={investcircle} alt="" className='md:w-[150px] md:h-[150px]'/>  
                   </div>
-                 <div className='mt-10'>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
+                 <div className='mt-10 md:mt-0 flex-1 lg:w-[60%]'>
+                      <div className='lg:flex overflow-scroll lg:py-4'>
+                          <div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-blue-700' />
+                                      <h2>Fiat and Spot</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-green-500' />
+                                      <h2>Funding</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.23% = {symbol}7.39 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-pink-400' />
+                                      <h2>Cross Margin</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.00% = {symbol}0.000000 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-gray-500' />
+                                      <h2>Isolated Margin</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.00% = {symbol}0.000000  <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
                           </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-green-500' />
-                              <h2>Fiat and Spot</h2>
+                          <div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-blue-400' />
+                                      <h2>USDⓈ-M Futures</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.00% = {symbol}0.000000 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-yellow-400' />
+                                      <h2>COIN-M Future</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.00% = {symbol}0.000000 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-yellow-400' />
+                                      <h2>Earn</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>67.23% = {symbol}300.39 <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
+                              <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md whitespace-nowrap lg:space-x-4'>
+                                  <div className='flex items-center space-x-1'>
+                                      <div className='w-2 h-2 bg-yellow-400' />
+                                      <h2>Options</h2>
+                                  </div>
+                                  <h2 className='flex items-center text-gray-500 '>0.00% = {symbol}0.000000  <MdOutlineKeyboardArrowRight className="ml-3" /></h2>
+                              </div>
                           </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
-                      </div>
-                      <div className='flex justify-between items-center text-xs hover:bg-gray-200 p-2 px-2 rounded-md'>
-                          <div className='flex items-center space-x-1'>
-                              <div className='w-2 h-2 bg-blue-700' />
-                              <h2>Fiat and Spot</h2>
-                          </div>
-                          <h2 className='flex items-center text-gray-500 '>5.23% = {symbol}30.39 <MdOutlineKeyboardArrowRight /></h2>
                       </div>
                  </div>
               </div>
