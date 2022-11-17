@@ -21,7 +21,6 @@ const FirstHomeItem = () => {
                   <h1 className='px-5 font-bold text-3xl '>Search for over 1000+ cryptocurrencies</h1>
                   <div className='flex items-center space-x-1 mx-3 mt-10 cursor-pointer '>
                       <AiOutlineSlack className='text-xl ml-4' />
-                      <p>Trade Bitcoin for free</p>
                       <MdKeyboardArrowRight className='text-2xl' />
                   </div>
                   <div className='mt-4 px-4'>

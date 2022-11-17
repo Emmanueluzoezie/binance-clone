@@ -15,9 +15,8 @@ import PrivateRoute from './components/PrivateRoute'
 import { MdOutlineMessage } from 'react-icons/md';
 import LandingPage from './pages/LandingPage';
 import Home from './pages/Home';
-import DashBoard from './components/user-compenent/dashBoard';
 import Security from './components/user-compenent/security';
-import Footer from './components/Footer';
+import DashBoard from "./components/user-compenent/dashboard/dashBoard"
 
 function App() {
   const { sidebar, openLanguage, setCheckUser, checkUser } = useStateContext()
