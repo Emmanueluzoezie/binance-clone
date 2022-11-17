@@ -1,9 +1,9 @@
 import React from 'react'
 import { BiHide, BiSearch, BiShow } from 'react-icons/bi'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
-import { useStateContext } from '../../context/useStateContext'
-import investcircle from "../../data/investcircle.png"
-import userbanner from "../../data/userbanner.png"
+import { useStateContext } from '../../../context/useStateContext'
+import investcircle from "../../../data/investcircle.png"
+import userbanner from "../../../data/userbanner.png"
 
 const AccountInfo = () => {
     const { showBalance, setShowBalance, symbol } = useStateContext()

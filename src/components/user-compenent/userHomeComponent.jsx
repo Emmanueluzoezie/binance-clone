@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStateContext } from '../../context/useStateContext'
 import Footer from '../Footer'
-import DashBoard from './dashBoard'
+import DashBoard from './dashboard/dashBoard'
 import UserMenu from './UserMenu'
 
 const UserHomeComponent = () => {
@@ -12,7 +12,9 @@ const UserHomeComponent = () => {
       <UserMenu />
       <div className='overflow-y-scroll md:h-[88vh] flex-1'> 
         {activePage === "dashboard" && <DashBoard />}
-        <Footer />
+        <div className='hidden md:block'>
+          <Footer />
+        </div>
       </div>
     </div>
   )

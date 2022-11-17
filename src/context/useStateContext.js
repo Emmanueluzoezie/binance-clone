@@ -15,7 +15,7 @@ export const ContextProvider = ({children}) => {
     const [activePage, setActivePage] = useState("dashboard")
     const [checkUser, setCheckUser] = useState(false)
     const [showBalance, setShowBalance] = useState(true)
-    const [bgHover, setBgHover] = useState(true)
+    const [activeCoinDetails, setActiveCoinDetails] = useState("spot")
 
     useEffect(() => {
         switch (currency) {
@@ -183,7 +183,7 @@ export const ContextProvider = ({children}) => {
 
     return(
         <StateContext.Provider value={{
-            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType, itemType, setItemType, sidebarLink, setSidebarLink, activePage, setActivePage, checkUser, setCheckUser, showBalance, setShowBalance, bgHover, setBgHover }}>
+            sidebar, setSidebar, openLanguage, setOpenLanguage, language, setLanguage, currency, setCurrency, symbol, currencyList, setCurrencyList, registerType, setRegisterType, itemType, setItemType, sidebarLink, setSidebarLink, activePage, setActivePage, checkUser, setCheckUser, showBalance, setShowBalance, activeCoinDetails, setActiveCoinDetails }}>
             {children}
         </StateContext.Provider>
     )

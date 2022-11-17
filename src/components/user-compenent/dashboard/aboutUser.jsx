@@ -1,7 +1,7 @@
 import{FaUser,FaKey,FaCalendar,FaMoneyBill,FaUserAltSlash,FaTimes, FaCalculator, FaPen, FaEdit} from 'react-icons/fa'
 import { MdKeyboardArrowDown, MdKeyboardArrowRight, MdVerified } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
-import personsvg from  "../../data/persontwosvg.png"
+import personsvg from  "../../../data/persontwosvg.png"
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
 function AboutUser() {
