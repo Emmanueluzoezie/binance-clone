@@ -1,23 +1,27 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { useDispatch } from "react-redux"
 import { FaBell, FaUser } from "react-icons/fa"
 import { FiMenu } from "react-icons/fi"
 import { MdPerson } from "react-icons/md"
 import { useNavigate } from "react-router-dom"
 import { useStateContext } from "../context/useStateContext"
-import logo from "../data/cryptol.png"
+import { useSelector } from 'react-redux';
+import { selectedUser } from '../slice/userSlice';
+import logo from "../data/cryptol.png";
+import { logout  } from "../slice/userSlice"
 
 const Header = () => {
-  const { setSidebar, setOpenLanguage, setCurrencyList, checkUser, setCheckUser, setActivePage, activePage } = useStateContext()
+  const { setSidebar, setOpenLanguage, setCurrencyList, setActivePage, activePage } = useStateContext()
     const navigate = useNavigate()
+  const user = useSelector(selectedUser)
+  const dispatch = useDispatch()
 
-  const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setCheckUser(true)
-      } else {
-        setCheckUser(false)
-      }
-    })
+  console.log(user)
+
+  const signOut = () => {
+    const auth = getAuth()
+    auth.signOut().then(() => dispatch(logout()))
+  }
 
     const handleSidebar= () => {
         setSidebar(true)
@@ -59,9 +63,9 @@ const Header = () => {
 
         <div className="flex items-center">
           <div>
-            {checkUser ? (
+            {user ? (
               <div className="mr-4 bg-gray-300 rounded-full p-1 text-xl text-gray-500 cursor-pointer" >
-                <MdPerson />
+                <MdPerson onClick={signOut}/>
               </div>) :
               ("")}
           </div>

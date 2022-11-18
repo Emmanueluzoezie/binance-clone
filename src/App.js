@@ -17,18 +17,13 @@ import LandingPage from './pages/LandingPage';
 import Home from './pages/Home';
 import Security from './components/user-compenent/security';
 import DashBoard from "./components/user-compenent/dashboard/dashBoard"
+import { useSelector } from 'react-redux';
+import { selectedUser } from './slice/userSlice';
 
 function App() {
-  const { sidebar, openLanguage, setCheckUser, checkUser } = useStateContext()
+  const { sidebar, openLanguage } = useStateContext()
 
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setCheckUser(true)
-    } else {
-      setCheckUser(false)
-    }
-  })
+  const user = useSelector(selectedUser)
 
   return (
     <div className='bg-gray-50 dark:dark-theme h-screen relative'>
@@ -36,7 +31,7 @@ function App() {
         <MdOutlineMessage />
       </div>
 
-      {!checkUser? (
+      {!user? (
         <LandingPage />
       ) :(
         <div className='pb-1'>

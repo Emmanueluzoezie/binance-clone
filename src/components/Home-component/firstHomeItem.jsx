@@ -10,9 +10,29 @@ import logo from "../../data/logos.png"
 import binanceFour from "../../data/binance-four.png"
 import { FaRegCreditCard } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { login } from "../../slice/userSlice"
+import { useDispatch } from "react-redux"
 
 const FirstHomeItem = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const auth = getAuth()
+    const provider = new GoogleAuthProvider();
+
+    const signIn = () => {
+        signInWithPopup(auth, provider)
+            .then(({ user }) => {
+                dispatch(
+                    login({
+                        displayName: user.displayName,
+                        email: user.email,
+                        photoUrl: user.photoURL,
+                    })
+                );
+            })
+            .catch((error) => alert(error.message));
+    };
 
   return (
       <div>
@@ -34,7 +54,7 @@ const FirstHomeItem = () => {
                           <div className='flex-1 ml-2 border-b-[1px] border-white' />
                       </div>
                       <div className='flex items-center space-x-4'>
-                          <button className='flex items-center flex-1 justify-center bg-gray-400  p-3 rounded-lg' onClick={()=> navigate('/google')}>
+                          <button className='flex items-center flex-1 justify-center bg-gray-400  p-3 rounded-lg' onClick={signIn}>
                               <img src={google} className="w-4 h-4 mr-3" alt="google-logo" />
                               Google
                           </button>
