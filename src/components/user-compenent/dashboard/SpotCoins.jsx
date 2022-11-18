@@ -52,7 +52,7 @@ const SpotCoins = () => {
         </div>
       </div>
       {coins && coins.splice(0, 10).map(coin => (
-         <div>
+         <div key={coin.id}>
           <div className='md:hidden my-10 space-y-2'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center space-x-2 text-sm '>

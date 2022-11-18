@@ -4,6 +4,7 @@ import AboutUser from '../dashboard/aboutUser'
 import AccountInfo from './accountInfo'
 import MarketDetails from './MarketDetails'
 import userbanner from "../../../data/userbanner.png"
+import Service from './service'
 
 const DashBoard = () => {
   return (
@@ -17,7 +18,7 @@ const DashBoard = () => {
           <img src={userbanner} alt="banner" className='w-[100px]' />
         </div>
         </div>
-          <h1>DashBoard</h1>
+        <Service />
     </div>
   )
 }

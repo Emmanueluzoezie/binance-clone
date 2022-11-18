@@ -6,46 +6,59 @@ import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import ThemeMode from '../components/themeMode';
 import { useStateContext } from '../context/useStateContext';
 import logo from "../data/cryptol.png"
+import {login} from "../slice/userSlice"
+import { useDispatch } from "react-redux"
 
 function SignIn() {
-  const [formData ,setFormData] = useState({
-    email:'',
-    password:''
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
   });
   const [colorTheme, setTheme] = ThemeMode();
   const { setOpenLanguage, openLanguage, language, setSidebar } = useStateContext()
-  const {email , password}= formData
-  
-  const navigate= useNavigate()
- 
+  const { email, password } = formData
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }))
   }
-  const onSubmit = async(e)=>{
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const auth =getAuth();
+      const auth = getAuth();
       const userCredentials = await signInWithEmailAndPassword(
         auth,
         email,
         password
       )
-      if(userCredentials.user){
-          navigate('/profile')
+      if (userCredentials.user) {
+        dispatch(
+          login({
+            displayName: userCredentials.user.displayName,
+            email: userCredentials.user.email,
+            photoUrl: userCredentials.user.photoURL,
+          })
+        )
       }
     } catch (error) {
-       toast.error('invalid user Credentails')
+      toast.error('invalid user Credentails')
     }
-    }
-  const onSignUp= ()=>{
-   navigate('/register')
   }
-  const onForgot= ()=>{
+
+  const onSignUp = () => {
+    navigate('/register')
+  }
+
+  const onForgot = () => {
     navigate('/forgot-password')
   }
+
   return (
     <div className='p-6'>
       <div className='flex justify-between items-center'>
@@ -82,3 +95,9 @@ function SignIn() {
 }
 
 export default SignIn
+
+  // dispatch(
+  //   login({
+  //     userDetails: userCredentials.user
+  //   })
+  // )
