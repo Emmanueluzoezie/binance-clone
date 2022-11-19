@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='hidden lg:flex lg:flex-row lg:justify-between lg:items-center lg:text-gray-600 lg:text-sm lg:text-bold md:p-2 lg:py-6  lg:m-1'>
+      <header className='hidden lg:flex lg:flex-row lg:justify-between items-center lg:text-gray-600 lg:text-sm lg:text-bold md:p-2 lg:py-6  lg:m-1'>
         <div className="logo">
           <img src={logo} className="w-24 md:w-36 cursor-pointer" alt="logo" onClick={() => navigate("/")} />
         </div>
@@ -49,7 +49,7 @@ const Header = () => {
           </ul>
         <div>
           <ul className="cursor-pointer flex items-center justify-between gap-2 mt-2">
-            <li><FaUser /></li>
+            <li onClick={signOut}><FaUser /></li>
             <li>Downloads</li>
             <li>English</li>
             <li className="border-l-2 px-1 text-center">USD</li>
