@@ -1,3 +1,11 @@
+import bannerone from "../data/bannerone.png"
+import bannertwo from "../data/bannertwo.png"
+import bannerthree from "../data/bannerthree.png"
+import bannerfour from "../data/bannerfour.png"
+import bannerfive from "../data/bannerfive.png"
+import bannersix from "../data/bannersix.png"
+import bannerseven from "../data/bannerseven.png"
+
 
 export const languageLinks = [
    " English",
@@ -136,4 +144,28 @@ export const currencyLink = [
    'TWD',
    'UAH',
    'ZAR'
+]
+
+export const carouselItems = [
+   {
+      carousel: <img src={bannerone} alt="banner-one" className="w-full" />
+   },
+   {
+      carousel: <img src={bannertwo} alt="banner-two" className="w-full" />
+   },
+   {
+      carousel: <img src={bannerthree} alt="banner-three" className="w-full" />
+   },
+   {
+      carousel: <img src={bannerfour} alt="banner-four" className="w-full" />
+   },
+   {
+      carousel: <img src={bannerfive} alt="banner-five" className="w-full" />
+   },
+   {
+      carousel: <img src={bannersix} alt="banner-six" className="w-full" />
+   },
+   {
+      carousel: <img src={bannerseven} alt="banner-seven" className="w-full" />
+   },
 ]

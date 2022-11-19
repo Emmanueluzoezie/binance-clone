@@ -9,18 +9,16 @@ import Service from './service'
 const DashBoard = () => {
   return (
     <div>
-        <AboutUser />
-        <AccountInfo />
-        <MarketDetails />
-        <div className='px-5'>
-        <div className='lg:hidden flex mt-10 justify-between bg-gray-200 p-3 text-xl font-semibold items-center rounded-xl'>
-          <h3 className='text-lg'>New: 0% fees in trading Bitcoin</h3>
-          <img src={userbanner} alt="banner" className='w-[100px]' />
-        </div>
-        </div>
-        <Service />
+      <AboutUser />
+      <AccountInfo />
+      <div className='lg:flex'>
+        <div className='flex-1'><MarketDetails /></div>
+        <div className='lg:w-[40%]'><Service /></div>
+      </div>
     </div>
   )
 }
 
 export default DashBoard
+
+ 
