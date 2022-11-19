@@ -12,7 +12,7 @@ const UserHomeComponent = () => {
       <UserMenu />
       <div className='overflow-y-scroll md:h-[88vh] flex-1'> 
         {activePage === "dashboard" && <DashBoard />}
-        <div className='hidden md:block'>
+        <div className='hidden lg:block'>
           <Footer />
         </div>
       </div>

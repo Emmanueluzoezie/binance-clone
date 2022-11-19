@@ -41,7 +41,6 @@ const SpotCoins = () => {
 
   return (
     <div>
-      <h2>SpotCoins</h2>
       <div className='w-full hidden  md:flex items-center my-4'>
         <div className='w-full flex items-center space-x-4 px-3'>
           <h1 className='flex-1'>Name</h1>

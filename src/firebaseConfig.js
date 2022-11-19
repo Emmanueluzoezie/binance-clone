@@ -1,13 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import{getFirestore} from 'firebase/firestore'
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBjvgaMHuNw5IVjsZWCaaL_miUbQ_bQydY",
-  authDomain: "coin-website-9028d.firebaseapp.com",
-  projectId: "coin-website-9028d",
-  storageBucket: "coin-website-9028d.appspot.com",
-  messagingSenderId: "925275113477",
-  appId: "1:925275113477:web:62a756ed993b4b9b2ab46c"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 // Initialize Firebase

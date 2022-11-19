@@ -148,7 +148,7 @@ export const currencyLink = [
 
 export const carouselItems = [
    {
-      carousel: <img src={bannerone} alt="banner-one" className="w-full" />
+      carousel: <img src={bannerone} alt="banner-one" className="w-full"/>
    },
    {
       carousel: <img src={bannertwo} alt="banner-two" className="w-full" />
@@ -158,7 +158,7 @@ export const carouselItems = [
    },
    {
       carousel: <img src={bannerfour} alt="banner-four" className="w-full" />
-   },
+   }, 
    {
       carousel: <img src={bannerfive} alt="banner-five" className="w-full" />
    },
