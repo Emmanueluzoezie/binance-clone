@@ -44,10 +44,9 @@ function App() {
           </>
       ) :(
         <div className='pb-1'>
-            <Home />
-
             <div className='hidden'>
               <Routes>
+                <Route path='/' element={<Home />} />
                 <Route path='/dashboard' element={<DashBoard />} />
                 <Route path='/market' element={<Market />} />
                 <Route path='/favorite' element={<Favorite />} />
