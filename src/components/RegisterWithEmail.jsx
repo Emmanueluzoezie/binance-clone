@@ -4,14 +4,19 @@ import {db} from'../firebaseConfig';
 import{toast} from 'react-toastify'
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import {setDoc ,doc, serverTimestamp } from "firebase/firestore"
+import { useDispatch } from "react-redux";
+import { login } from "../slice/userSlice"
+
 const RegisterWithEmail = () => {
   const [formData, setFormData] = useState({
     email:'',
     password:'',
   })
   const {email, password} =formData;
+  const dispatch = useDispatch()
  const navigate = useNavigate()
-  const onChange = (e) => {
+
+ const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
@@ -28,7 +33,14 @@ const RegisterWithEmail = () => {
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp()
       await setDoc(doc(db,'users', user.uid), formDataCopy)
-      navigate('/')
+      dispatch(
+        login({
+          displayName: user.displayName,
+          email: user.email,
+          photoUrl: user.photoURL,
+        })
+      )
+
       toast.success('account created')
     } catch (error) {
       toast.error(error.message)

@@ -7,7 +7,7 @@ import { useStateContext } from '../context/useStateContext'
 import logo from "../data/cryptol.png"
 
 const Register = () => {
-  const { setOpenLanguage, openLanguage, language, setSidebar } = useStateContext()
+  const { setOpenLanguage, openLanguage, language} = useStateContext()
   const [colorTheme, setTheme] = ThemeMode();
   const navigate = useNavigate()
 

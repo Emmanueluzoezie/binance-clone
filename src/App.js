@@ -1,9 +1,8 @@
-
 import './App.css';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Market from './pages/market';
 import { useStateContext } from './context/useStateContext';
 import Favorite from './pages/Favorite';
@@ -32,7 +31,17 @@ function App() {
       </div>
 
       {!user? (
-        <LandingPage />
+        <>
+            <Routes>
+                <Route path='/' element={<LandingPage />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/forgot-password' element={<ForgotPassword />} />
+                <Route path='/sign-in' element={<SignIn />} />
+                <Route path='/google' element={<OAuth />} />
+                <Route path='/profile' element={<PrivateRoute />} >
+                </Route>
+            </Routes>
+          </>
       ) :(
         <div className='pb-1'>
             <Home />
@@ -40,17 +49,9 @@ function App() {
             <div className='hidden'>
               <Routes>
                 <Route path='/' element={<DashBoard />} />
-                {/* <Route path='/landingpage' element={<LandingPage />} /> */}
                 <Route path='/market' element={<Market />} />
                 <Route path='/favorite' element={<Favorite />} />
-                <Route path='/register' element={<Register />} />
-                <Route path='/sign-in' element={<SignIn />} />
-                <Route path='/google' element={<OAuth />} />
-                <Route path='/profile' element={<PrivateRoute />} >
-                  {/* <Route path='/profile' element={<Profile />} /> */}
-                </Route>
-                <Route path='/forgot-password' element={<ForgotPassword />} />
-
+              
                 {/* components  */}
                 <Route path='/dashboard' element={<DashBoard />} />
                 <Route path='/security' element={<Security />} />
